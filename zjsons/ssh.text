@@ -1,0 +1,86 @@
+To update your Docker container on the Ubuntu server with new code changes, you'll need to follow these steps:
+
+Make changes to your code locally
+Rebuild the Docker image
+Push the new image to Docker Hub
+Pull the new image on your Ubuntu server
+Stop the old container and start a new one with the updated image
+
+Here's a detailed breakdown of each step:
+
+Make changes to your code locally:
+
+Update your application code as needed on your local machine.
+
+Rebuild the Docker image:
+
+Navigate to your project directory containing the Dockerfile.
+Build a new image with a new tag (e.g., version number or 'latest'):
+Copydocker build -t yourusername/yourrepository:newtag .
+
+Push the new image to Docker Hub:
+
+Log in to Docker Hub if you haven't already:
+Copydocker login
+
+Push the new image:
+Copydocker push yourusername/yourrepository:newtag
+
+Pull the new image on your Ubuntu server:
+
+SSH into your Ubuntu server
+Pull the new image:
+Copydocker pull yourusername/yourrepository:newtag
+
+Stop the old container and start a new one:
+
+Find the container ID of the running container:
+Copydocker ps
+
+Stop the old container:
+Copydocker stop <container_id>
+
+Remove the old container (optional):
+Copydocker rm <container_id>
+
+Start a new container with the updated image:
+Copydocker run -d --name yourcontainername -p 4242:4242 yourusername/yourrepository:newtag
+
+Note: Adjust the port mapping and other run options as needed to match your original setup.
+
+To make this process easier, you could create a script on your Ubuntu server to automate steps 4 and 5. Here's an example:
+Script to update Docker containerClick to open code
+You can save this script on your Ubuntu server (e.g., as update_container.sh), make it executable with chmod +x update_container.sh, and run it whenever you want to update your container.
+Remember to replace yourusername, yourrepository, newtag, yourcontainername, and adjust the port if necessary.
+To use this script:
+
+After pushing your new image to Docker Hub, SSH into your Ubuntu server.
+Run the script:
+Copy./update_container.sh
+
+This process allows you to quickly update your Docker container on the Ubuntu server whenever you make code changes locally.
+
+#!/bin/bash
+
+# Set variables
+
+DOCKER_USERNAME="yourusername"
+REPOSITORY="yourrepository"
+NEW_TAG="newtag"
+CONTAINER_NAME="yourcontainername"
+PORT="4242"
+
+# Pull the new image
+
+docker pull $DOCKER_USERNAME/$REPOSITORY:$NEW_TAG
+
+# Stop and remove the old container
+
+docker stop $CONTAINER_NAME
+docker rm $CONTAINER_NAME
+
+# Run the new container
+
+docker run -d --name $CONTAINER_NAME -p $PORT:$PORT $DOCKER_USERNAME/$REPOSITORY:$NEW_TAG
+
+echo "Container updated successfully!"

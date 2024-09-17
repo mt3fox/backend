@@ -1,0 +1,45 @@
+{
+  "date_of_issue": "2024-09-17T20:00:00+00:00",
+  "date_due": "2024-10-01T20:00:00+00:00",
+  "bill_from": "Company A",
+  "bill_from_address_line_1": "123 Main St",
+  "bill_from_postal_code": "10001",
+  "bill_from_city": "Metropolis",
+  "bill_from_country": "USA",
+  "bill_from_email": "contact@companya.com",
+  "bill_from_phone": "+1-555-1234",
+  "bill_to": "Company B",
+  "bill_to_address_line_1": "456 Elm St",
+  "bill_to_postal_code": "10002",
+  "bill_to_city": "Gotham",
+  "bill_to_country": "USA",
+  "bill_to_email": "billing@companyb.com",
+  "bill_to_phone": "+1-555-5678",
+  "discount": "20%",
+  "total": "2400.00",
+  "amount_due": "2400.00",
+  "currency": "USD",
+  "paidmanual": true,
+  "thankyou_note": "HALALUIYAAA",
+  "items": [
+    {
+      "description": "Consulting Services",
+      "quantity": 5,
+      "unit_price": 200.0,
+      "subtotal": 1000.0
+    },
+    {
+      "description": "Other Services",
+      "quantity": 5,
+      "unit_price": 200.0,
+      "subtotal": 1000.0
+    },
+    {
+      "description": "Some Other Services",
+      "quantity": 5,
+      "unit_price": 200.0,
+      "subtotal": 1000.0
+    }
+  ]
+}
+

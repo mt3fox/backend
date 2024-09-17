@@ -1,0 +1,28 @@
+{
+  "discount": "10%",
+  "total": "2700.00",
+  "amount_due": "2700.00",
+  "currency": "USD",
+  "paidmanual": true,
+  "thankyou_note": "HALALUIYAAA",
+  "items": [
+    {
+      "description": "Consulting Services",
+      "quantity": 5,
+      "unit_price": 200.0,
+      "subtotal": 1000.0
+    },
+    {
+      "description": "Other Services",
+      "quantity": 5,
+      "unit_price": 200.0,
+      "subtotal": 1000.0
+    },
+    {
+      "description": "Some Other Services",
+      "quantity": 5,
+      "unit_price": 200.0,
+      "subtotal": 1000.0
+    }
+  ]
+}
